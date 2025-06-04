@@ -1,0 +1,132 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span>Sistema de Irrigação</span>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span>Início</span>
+    </a>
+    <a mat-menu-item routerLink="/config">
+      <mat-icon>settings</mat-icon>
+      <span>Configurações</span>
+    </a>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <div class="dashboard-grid">
+    <!-- Card de Status -->
+    <mat-card class="status-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>opacity</mat-icon>
+        <mat-card-title>Status do Solo</mat-card-title>
+        <mat-card-subtitle>Monitoramento em tempo real</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="status-content">
+          <div class="umidade-display">
+            <div class="umidade-valor">
+              {{ umidade }}%
+            </div>
+            <div class="umidade-label">
+              Umidade Atual
+            </div>
+          </div>
+          
+          <mat-progress-bar
+            mode="determinate"
+            [value]="umidade"
+            [color]="umidade < limiarUmidade ? 'warn' : 'primary'"
+            class="umidade-barra">
+          </mat-progress-bar>
+
+          <div class="status-info">
+            <div class="info-item">
+              <mat-icon [class.ativo]="bombaLigada">
+                {{ bombaLigada ? 'power' : 'power_off' }}
+              </mat-icon>
+              <span>Bomba {{ bombaLigada ? 'Ligada' : 'Desligada' }}</span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Controle -->
+    <mat-card class="controle-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>settings</mat-icon>
+        <mat-card-title>Controle do Sistema</mat-card-title>
+        <mat-card-subtitle>Ajuste os parâmetros</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="controle-content">
+          <div class="limiar-section">
+            <h3>Limiar de Umidade</h3>
+            <div class="limiar-controle">
+              <mat-slider
+                min="0"
+                max="100"
+                step="1"
+                [(ngModel)]="limiarUmidade"
+                class="limiar-slider">
+              </mat-slider>
+              <div class="limiar-valor">{{ limiarUmidade }}%</div>
+            </div>
+            <button mat-raised-button color="primary" (click)="salvarLimiar()">
+              <mat-icon>save</mat-icon>
+              Salvar Limiar
+            </button>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="bomba-section">
+            <h3>Controle Manual da Bomba</h3>
+            <div class="bomba-controles">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="bombaLigada"
+                (click)="controlarBomba('ligar')">
+                <mat-icon>play_arrow</mat-icon>
+                Ligar Bomba
+              </button>
+              <button
+                mat-raised-button
+                color="warn"
+                [disabled]="!bombaLigada"
+                (click)="controlarBomba('desligar')">
+                <mat-icon>stop</mat-icon>
+                Desligar Bomba
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Histórico -->
+    <mat-card class="historico-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>history</mat-icon>
+        <mat-card-title>Histórico</mat-card-title>
+        <mat-card-subtitle>Últimas 24 horas</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="historico-content">
+          <p class="em-desenvolvimento">
+            <mat-icon>engineering</mat-icon>
+            Histórico em desenvolvimento
+          </p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

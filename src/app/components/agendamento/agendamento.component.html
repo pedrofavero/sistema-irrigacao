@@ -1,0 +1,97 @@
+<div class="agendamento-container">
+  <div class="agendamento-grid">
+    <!-- Card de Novo Agendamento -->
+    <mat-card class="novo-agendamento-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>schedule</mat-icon>
+        <mat-card-title>Novo Agendamento</mat-card-title>
+        <mat-card-subtitle>Configure um novo horário de irrigação</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <form class="agendamento-form">
+          <mat-form-field appearance="outline">
+            <mat-label>Horário</mat-label>
+            <input matInput type="time" [(ngModel)]="novoAgendamento.horario" name="horario">
+            <mat-icon matSuffix>access_time</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Duração (minutos)</mat-label>
+            <input matInput type="number" [(ngModel)]="novoAgendamento.duracao" name="duracao" min="1" max="60">
+            <mat-icon matSuffix>timer</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Dias da Semana</mat-label>
+            <mat-select [(ngModel)]="novoAgendamento.diasSemana" name="diasSemana" multiple>
+              <mat-option value="DOM">Domingo</mat-option>
+              <mat-option value="SEG">Segunda</mat-option>
+              <mat-option value="TER">Terça</mat-option>
+              <mat-option value="QUA">Quarta</mat-option>
+              <mat-option value="QUI">Quinta</mat-option>
+              <mat-option value="SEX">Sexta</mat-option>
+              <mat-option value="SAB">Sábado</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" (click)="adicionarAgendamento()">
+            <mat-icon>add</mat-icon>
+            Adicionar Agendamento
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Agendamentos Ativos -->
+    <mat-card class="agendamentos-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>list</mat-icon>
+        <mat-card-title>Agendamentos Ativos</mat-card-title>
+        <mat-card-subtitle>Horários programados</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="agendamentos-lista">
+          <div *ngFor="let agendamento of agendamentos" class="agendamento-item">
+            <div class="agendamento-info">
+              <div class="horario-info">
+                <mat-icon>access_time</mat-icon>
+                <span>{{ agendamento.horario }}</span>
+              </div>
+              
+              <div class="duracao-info">
+                <mat-icon>timer</mat-icon>
+                <span>{{ agendamento.duracao }} min</span>
+              </div>
+
+              <div class="dias-info">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let dia of agendamento.diasSemana">
+                    {{ dia }}
+                  </mat-chip>
+                </mat-chip-set>
+              </div>
+            </div>
+
+            <div class="agendamento-acoes">
+              <mat-slide-toggle
+                [checked]="agendamento.ativo"
+                (change)="toggleAgendamento(agendamento)">
+              </mat-slide-toggle>
+              
+              <button mat-icon-button color="warn" (click)="removerAgendamento(agendamento)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+
+          <div *ngIf="agendamentos.length === 0" class="sem-agendamentos">
+            <mat-icon>event_busy</mat-icon>
+            <p>Nenhum agendamento configurado</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> 

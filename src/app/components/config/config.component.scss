@@ -1,0 +1,29 @@
+.config-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.config-section {
+  margin: 2rem 0;
+
+  h3 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+mat-divider {
+  margin: 2rem 0;
+} 

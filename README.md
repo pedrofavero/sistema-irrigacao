@@ -1,27 +1,88 @@
-# SistemaIrrigacao
+# Sistema de Irrigação Automatizado
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Sistema de monitoramento e controle de irrigação usando ESP32 e Angular.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🌱 Monitoramento em tempo real da umidade do solo
+- 💧 Controle automático e manual da bomba de irrigação
+- 📱 Interface responsiva acessível via web e mobile
+- 📊 Dashboard intuitivo com indicadores visuais
+- ⚙️ Configurações personalizáveis
+- 🔄 Atualização automática dos dados
+- 📱 Acesso via QR Code
 
-## Code scaffolding
+## Requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js 18.x ou superior
+- Angular CLI 17.x
+- ESP32 com firmware atualizado
 
-## Build
+## Instalação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/sistema-irrigacao.git
+cd sistema-irrigacao
+```
 
-## Running unit tests
+2. Instale as dependências:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm start
+```
 
-## Running end-to-end tests
+4. Acesse a aplicação em `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Configuração do ESP32
 
-## Further help
+1. Carregue o firmware no ESP32 usando a Arduino IDE
+2. Configure o WiFi do ESP32 para se conectar à sua rede
+3. Anote o IP atribuído ao ESP32
+4. Atualize o IP nas configurações da aplicação web
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── dashboard/     # Dashboard principal
+│   │   ├── config/        # Configurações do sistema
+│   │   └── home/          # Página inicial
+│   ├── services/
+│   │   └── irrigacao.service.ts  # Serviço de comunicação com ESP32
+│   └── app.component.ts   # Componente raiz
+└── assets/               # Recursos estáticos
+```
+
+## Uso
+
+1. Acesse a página inicial
+2. Escaneie o QR Code para acesso mobile
+3. Navegue até o Dashboard para monitorar o sistema
+4. Configure os parâmetros na página de Configurações
+5. Monitore a umidade e controle a bomba conforme necessário
+
+## Contribuição
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## Contato
+
+Seu Nome - [@seutwitter](https://twitter.com/seutwitter)
+E-mail - seu.email@exemplo.com
+
+Link do projeto: [https://github.com/seu-usuario/sistema-irrigacao](https://github.com/seu-usuario/sistema-irrigacao)

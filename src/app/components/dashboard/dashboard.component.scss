@@ -1,0 +1,186 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.dashboard-container {
+  padding: 5rem 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.status-card,
+.controle-card,
+.historico-card {
+  height: 100%;
+}
+
+.status-content,
+.controle-content,
+.historico-content {
+  padding: 1rem;
+}
+
+.umidade-display {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.umidade-valor {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.umidade-label {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.umidade-barra {
+  height: 10px;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+.status-info {
+  margin-top: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  mat-icon {
+    &.ativo {
+      color: #4CAF50;
+    }
+    
+    &:not(.ativo) {
+      color: #F44336;
+    }
+  }
+}
+
+.limiar-section,
+.bomba-section {
+  margin: 2rem 0;
+
+  h3 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+}
+
+.limiar-controle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.limiar-slider {
+  flex: 1;
+}
+
+.limiar-valor {
+  min-width: 60px;
+  text-align: right;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.bomba-controles {
+  display: flex;
+  gap: 1rem;
+}
+
+mat-divider {
+  margin: 2rem 0;
+}
+
+.em-desenvolvimento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666;
+  font-style: italic;
+  margin: 2rem 0;
+
+  mat-icon {
+    font-size: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .dashboard-container {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .bomba-controles {
+    flex-direction: column;
+  }
+}
+
+.status-item,
+.controle-item {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    min-width: 150px;
+  }
+}
+
+.valor-umidade,
+.valor-limiar {
+  min-width: 60px;
+  text-align: right;
+}
+
+mat-progress-bar {
+  flex: 1;
+  height: 20px;
+}
+
+mat-slider {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.botoes-controle {
+  display: flex;
+  gap: 10px;
+}
+
+// Estilos para as notificações
+.snackbar-sucesso {
+  background: #4CAF50;
+  color: white;
+}
+
+.snackbar-erro {
+  background: #F44336;
+  color: white;
+}
+

@@ -1,0 +1,46 @@
+<div class="home-container">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>Sistema de Irrigação Automatizado</mat-card-title>
+      <mat-card-subtitle>Monitore e controle sua irrigação de qualquer lugar</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="features">
+        <div class="feature">
+          <mat-icon>opacity</mat-icon>
+          <h3>Monitoramento em Tempo Real</h3>
+          <p>Acompanhe a umidade do solo e o status da bomba</p>
+        </div>
+        <div class="feature">
+          <mat-icon>settings</mat-icon>
+          <h3>Controle Automático</h3>
+          <p>Configure o limiar de umidade para ativação automática</p>
+        </div>
+        <div class="feature">
+          <mat-icon>phone_android</mat-icon>
+          <h3>Acesso Mobile</h3>
+          <p>Escaneie o QR Code abaixo para acessar no seu celular</p>
+        </div>
+      </div>
+
+      <div class="qrcode-container">
+        <qrcode 
+          [qrdata]="qrCodeUrl" 
+          [width]="200" 
+          [errorCorrectionLevel]="'M'"
+        ></qrcode>
+        <p class="qrcode-text">Escaneie para acessar no celular</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button color="primary" routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        Acessar Dashboard
+      </a>
+      <a mat-raised-button color="accent" routerLink="/config">
+        <mat-icon>settings</mat-icon>
+        Configurações
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div> 

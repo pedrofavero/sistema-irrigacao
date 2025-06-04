@@ -1,0 +1,70 @@
+<div class="config-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-icon mat-card-avatar>settings</mat-icon>
+      <mat-card-title>Configurações do Sistema</mat-card-title>
+      <mat-card-subtitle>Ajuste os parâmetros do sistema de irrigação</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <section class="config-section">
+        <h3>Configurações de Rede</h3>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Endereço IP do ESP32</mat-label>
+          <input matInput [(ngModel)]="ipAddress" placeholder="Ex.: 192.168.1.100">
+          <mat-icon matSuffix>wifi</mat-icon>
+        </mat-form-field>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" (click)="salvarConfiguracoes()">
+            <mat-icon>save</mat-icon>
+            Salvar Configurações
+          </button>
+          <button mat-raised-button color="warn" (click)="testarConexao()">
+            <mat-icon>network_check</mat-icon>
+            Testar Conexão
+          </button>
+        </div>
+      </section>
+
+      <mat-divider></mat-divider>
+
+      <section class="config-section">
+        <h3>Configurações de Irrigação</h3>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Intervalo de Leitura (segundos)</mat-label>
+          <input matInput type="number" [(ngModel)]="intervaloLeitura" min="30" max="3600">
+          <mat-icon matSuffix>timer</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Tempo Máximo de Irrigação (minutos)</mat-label>
+          <input matInput type="number" [(ngModel)]="tempoMaxIrrigacao" min="1" max="60">
+          <mat-icon matSuffix>schedule</mat-icon>
+        </mat-form-field>
+      </section>
+
+      <mat-divider></mat-divider>
+
+      <section class="config-section">
+        <h3>Calibração do Sensor</h3>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Valor Mínimo (Solo Seco)</mat-label>
+          <input matInput type="number" [(ngModel)]="calibracaoMin" min="0" max="4095">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Valor Máximo (Solo Úmido)</mat-label>
+          <input matInput type="number" [(ngModel)]="calibracaoMax" min="0" max="4095">
+        </mat-form-field>
+
+        <div class="button-row">
+          <button mat-raised-button color="accent" (click)="calibrarSensor()">
+            <mat-icon>tune</mat-icon>
+            Calibrar Sensor
+          </button>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div> 

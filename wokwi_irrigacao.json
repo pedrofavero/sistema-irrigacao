@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Sistema de Irrigação Automatizado",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-analog-sensor",
+      "id": "sensor_umidade",
+      "top": 120,
+      "left": 160,
+      "attrs": {
+        "value": "50",
+        "min": "0",
+        "max": "100"
+      }
+    },
+    {
+      "type": "wokwi-relay",
+      "id": "rele",
+      "top": 120,
+      "left": -120,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:GND.1", "sensor_umidade:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "sensor_umidade:VCC", "red", [ "v0" ] ],
+    [ "esp:D34", "sensor_umidade:OUT", "green", [ "v0" ] ],
+    [ "esp:GND.1", "rele:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "rele:VCC", "red", [ "v0" ] ],
+    [ "esp:D26", "rele:IN", "green", [ "v0" ] ]
+  ]
+} 

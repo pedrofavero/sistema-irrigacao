@@ -1,0 +1,100 @@
+<div class="estatisticas-container">
+  <div class="stats-grid">
+    <!-- Card de Resumo -->
+    <mat-card class="resumo-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>analytics</mat-icon>
+        <mat-card-title>Resumo do Sistema</mat-card-title>
+        <mat-card-subtitle>Últimas 24 horas</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="stats-item">
+          <div class="stat-info">
+            <span class="stat-label">Média de Umidade</span>
+            <span class="stat-value">65%</span>
+          </div>
+          <mat-progress-bar mode="determinate" value="65"></mat-progress-bar>
+        </div>
+
+        <div class="stats-item">
+          <div class="stat-info">
+            <span class="stat-label">Tempo Total de Irrigação</span>
+            <span class="stat-value">45 min</span>
+          </div>
+          <div class="stat-bar-container">
+            <div class="stat-bar" style="width: 45%"></div>
+          </div>
+        </div>
+
+        <div class="stats-item">
+          <div class="stat-info">
+            <span class="stat-label">Economia de Água</span>
+            <span class="stat-value positive">+15%</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Alertas -->
+    <mat-card class="alertas-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>warning</mat-icon>
+        <mat-card-title>Alertas</mat-card-title>
+        <mat-card-subtitle>Status do Sistema</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="alerta-item success">
+          <mat-icon>check_circle</mat-icon>
+          <div class="alerta-info">
+            <span class="alerta-titulo">Sistema Funcionando</span>
+            <span class="alerta-desc">Todos os sensores operando normalmente</span>
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="alerta-item warning">
+          <mat-icon>info</mat-icon>
+          <div class="alerta-info">
+            <span class="alerta-titulo">Umidade Baixa</span>
+            <span class="alerta-desc">Região 2 requer atenção</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Eficiência -->
+    <mat-card class="eficiencia-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>eco</mat-icon>
+        <mat-card-title>Eficiência do Sistema</mat-card-title>
+        <mat-card-subtitle>Análise de Desempenho</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="eficiencia-item">
+          <div class="eficiencia-circle" style="--percent: 85">
+            <div class="circle-inner">
+              <span class="percent">85%</span>
+              <span class="label">Eficiência</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="eficiencia-detalhes">
+          <div class="detalhe-item">
+            <mat-icon>water_drop</mat-icon>
+            <span>Consumo Otimizado</span>
+          </div>
+          <div class="detalhe-item">
+            <mat-icon>schedule</mat-icon>
+            <span>Tempo Reduzido</span>
+          </div>
+          <div class="detalhe-item">
+            <mat-icon>trending_up</mat-icon>
+            <span>Alta Performance</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> 
