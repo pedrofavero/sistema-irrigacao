@@ -60,29 +60,8 @@ src/
 └── assets/               # Recursos estáticos
 ```
 
-## Uso
-
-1. Acesse a página inicial
-2. Escaneie o QR Code para acesso mobile
-3. Navegue até o Dashboard para monitorar o sistema
-4. Configure os parâmetros na página de Configurações
-5. Monitore a umidade e controle a bomba conforme necessário
-
-## Contribuição
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
 ## Licença
 
 Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## Contato
 
-Seu Nome - [@seutwitter](https://twitter.com/seutwitter)
-E-mail - seu.email@exemplo.com
-
-Link do projeto: [https://github.com/seu-usuario/sistema-irrigacao](https://github.com/seu-usuario/sistema-irrigacao)
