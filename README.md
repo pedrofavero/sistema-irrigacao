@@ -22,7 +22,7 @@ Sistema de monitoramento e controle de irrigação usando ESP32 e Angular.
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/sistema-irrigacao.git
+git clone https://github.com/pedrofavero/sistema-irrigacao.git
 cd sistema-irrigacao
 ```
 
